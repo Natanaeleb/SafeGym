@@ -19,8 +19,8 @@ Projetar um sistema capaz de identificar se a pessoa é registrada ou não em um
 - Uma boa iluminação no local para que não atrapalhe o reconhecimento facial dos indivíduos;
 
 ## Linguagens de Porgramação
--C++
--Python
+- C++
+- Python
 
 
 
