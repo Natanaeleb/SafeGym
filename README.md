@@ -6,7 +6,7 @@ Este repositório reúne códigos e documentos do Projeto de sistemas embarcados
 
 Projetar um sistema capaz de identificar se a pessoa é registrada ou não em uma academia, de modo que, ao coletar os dados identifiquem-se entradas de pessoas não registradas com o propósito de avisar ao gerente sobre o acesso indevido e, também que as pessoas registradas tenham um maior suporte na hora dos treinos. 
 
-##Requisitos
+## Requisitos
 
 - Uma Raspberry Pi 3b+ que funcionará como unidade central, em que ocorrerá o processamentos dos dados adquiridos;
 - Uma WebCam que irá capturar a imagem da pessoa na entrada da academia para detectar se a pessoa é registrada ou não no banco de dados;
@@ -18,7 +18,7 @@ Projetar um sistema capaz de identificar se a pessoa é registrada ou não em um
 - Um circuito eletrônico totalmente lacrado para não haver desconexão elétrica;
 - Uma boa iluminação no local para que não atrapalhe o reconhecimento facial dos indivíduos;
 
-##Linguagens de Porgramação
+## Linguagens de Porgramação
 -C++
 -Python
 
