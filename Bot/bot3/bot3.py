@@ -28,7 +28,7 @@ class User:
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	msg = bot.reply_to("Bem vindo ao bot de treinos SafeGym")
+	msg = bot.reply_to(message, 'Bem vindo ao bot de treinos SafeGym')
 	cid = message.chat.id #numero
 	bot.send_message(cid, "Nosso id é: " + str(cid) + "Este bot serve para enviar seus treinos em caso de dúvidas, \nQual seu nome?")
 	bot.register_next_step_handler(msg,process_name_step)
@@ -80,13 +80,14 @@ def process_mail_step(message):
 	try:
 		chat_id = message.chat.id
 		mail = message.text #nome digitado a variavel name
-		user = User_dict[chat_id] #alocando o nome dele na variavel user
+		user = user_dict[chat_id] #alocando o nome dele na variavel user
 
 		#nome da base
 		cur.execute("USE alunos_safegym")#executando base a ser usada
 		sql = "INSERT INTO usuario (nome_usuario,chatid_usuario,treino_usuario, email_usuario,idade_usuario) VALUES(%s,%s,%s,%s,%s)"
 		val = (user.name,str(chat_id),user.treino,mail,str(user.age))
 		cur.execute(sql,val)#comando insert+valores
+		print(val)
 		conn.commit()#açao do comando digitado
 		cur.close()
 		conn.close()
@@ -96,7 +97,7 @@ def process_mail_step(message):
 	except Exception as e:
 		bot.reply_to(message,e)
 
-bot.enable_save_next_handlers(delay=2)
+bot.enable_save_next_step_handlers(delay=2)
 bot.load_next_step_handlers()
 
 bot.polling()
