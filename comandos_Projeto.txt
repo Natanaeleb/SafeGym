@@ -1,0 +1,15 @@
+Bot
+compilar
+g++ bot.cpp -o bot --std=c++14 -I/usr/local/include -lTgBot -lboost_system -lssl -lcrypto -lpthread
+executar
+./bot
+
+Reconhecimento Facial
+cd rpi_face_recognition_cpp
+make train
+make recognizer
+
+Servo e Sensor
+
+gcc servo_sensor.c -o servo_sensor.out -lwiringPi
+./servo_sensor
